@@ -5,20 +5,12 @@ import PackageDescription
 
 let package = Package(
     name: "TradeVisionUI",
-    products: [
-        // Products define the executables and libraries a package produces, making them visible to other packages.
-        .library(
-            name: "TradeVisionUI",
-            targets: ["TradeVisionUI"]),
-    ],
+    platforms: [.iOS(.v16), .macOS(.v13)],
+    products: [.library(name: "TradeVisionUI", targets: ["TradeVisionUI"])],
     targets: [
-        // Targets are the basic building blocks of a package, defining a module or a test suite.
-        // Targets can depend on other targets in this package and products from dependencies.
         .target(
-            name: "TradeVisionUI"),
-        .testTarget(
-            name: "TradeVisionUITests",
-            dependencies: ["TradeVisionUI"]
-        ),
+            name: "TradeVisionUI",
+            path: "Sources/TradeVisionUI"
+        )
     ]
 )
