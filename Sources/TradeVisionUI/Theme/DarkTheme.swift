@@ -18,4 +18,5 @@ public struct DarkTheme: Theme {
     public let primaryBlue = Color(hex: "0A84FF")
     public let secondaryBlue = Color(hex: "1C3F61")
     public let accent = Color(hex: "30D98D")
+    public let shadowColor = Color(hex: "F5F5F5")
 }

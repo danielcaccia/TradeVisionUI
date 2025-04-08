@@ -18,4 +18,5 @@ public protocol Theme {
     var primaryBlue: Color { get }
     var secondaryBlue: Color { get }
     var accent: Color { get }
+    var shadowColor: Color { get }
 }

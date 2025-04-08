@@ -18,4 +18,5 @@ public struct LightTheme: Theme {
     public let primaryBlue = Color(hex: "009CFF")
     public let secondaryBlue = Color(hex: "00C6FF")
     public let accent = Color(hex: "18C37D")
+    public let shadowColor = Color(hex: "0A0A0A")
 }
