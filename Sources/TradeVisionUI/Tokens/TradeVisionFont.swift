@@ -17,10 +17,12 @@ import SwiftUI
 public enum TradeVisionFont {
     /// Font style for large headings or titles (28 points, medium weight).
     public static let header = Font.system(size: 28, weight: .medium)
-    /// Font style for section titles or subsections (17 points, semibold weight).
-    public static let section = Font.system(size: 17, weight: .semibold)
+    /// Font style for section titles (17 points, semibold weight).
+    public static let sectionHeader = Font.system(size: 17, weight: .semibold)
     /// Font style for general titles or main content text (17 points, regular weight).
     public static let title = Font.system(size: 17, weight: .regular)
     /// Font style for subtitles or smaller heading-like text (16 points, regular weight).
     public static let subtitle = Font.system(size: 16, weight: .regular)
+    /// Font style for buttons text (14 points, regular weight).
+    public static let button = Font.system(size: 14, weight: .regular)
 }

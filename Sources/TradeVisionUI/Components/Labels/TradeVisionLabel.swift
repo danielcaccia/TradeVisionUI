@@ -8,22 +8,24 @@
 import SwiftUI
 
 public struct TradeVisionLabel: View {
-    let text: String
-
     @Environment(\.colorScheme) private var systemScheme
     @Environment(\.tradeVisionColorScheme) private var userPreference
 
-    public init(_ text: String) {
+    let text: String
+    let type: TradeVisionLabelType
+    
+    public init(_ text: String, type: TradeVisionLabelType) {
         self.text = text
+        self.type = type
     }
 
     public var body: some View {
         let theme = TradeVisionTheme.current(for: systemScheme, preference: userPreference)
 
         Text(text)
-            .foregroundColor(theme.primaryText)
+            .font(type.font)
+            .foregroundColor(type.labelColor(for: theme))
             .padding()
-            .background(theme.primaryBackground)
-            .cornerRadius(8)
+            .cornerRadius(TradeVisionCornerRadius.standard)
     }
 }

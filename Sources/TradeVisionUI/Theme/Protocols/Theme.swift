@@ -7,9 +7,10 @@
 
 import SwiftUI
 
-public protocol Theme {
+public protocol Theme: Sendable {
     var primaryText: Color { get }
     var secondaryText: Color { get }
+    var buttonText: Color { get }
     var primaryBackground: Color { get }
     var secondaryBackground: Color { get }
     var cardBackground: Color { get }
@@ -19,4 +20,6 @@ public protocol Theme {
     var secondaryBlue: Color { get }
     var accent: Color { get }
     var shadowColor: Color { get }
+    var positive: Color { get }
+    var negative: Color { get }
 }

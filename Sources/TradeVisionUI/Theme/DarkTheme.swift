@@ -10,6 +10,7 @@ import SwiftUI
 public struct DarkTheme: Theme {
     public let primaryText = Color(hex: "FFFFFF")
     public let secondaryText = Color(hex: "A0AEC0")
+    public let buttonText = Color(hex: "F7F9FB")
     public let primaryBackground = Color(hex: "0B111A")
     public let secondaryBackground = Color(hex: "2D3748")
     public let cardBackground = Color(hex: "1C2633")
@@ -19,4 +20,6 @@ public struct DarkTheme: Theme {
     public let secondaryBlue = Color(hex: "1C3F61")
     public let accent = Color(hex: "30D98D")
     public let shadowColor = Color(hex: "F5F5F5")
+    public let positive = Color(hex: "4ADE80")
+    public let negative = Color(hex: "F87171")
 }

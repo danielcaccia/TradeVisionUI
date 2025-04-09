@@ -14,7 +14,9 @@ import SwiftUI
 ///   This shadow is commonly used for general UI components, such as buttons or cards, that need a subtle lift effect.
 public enum TradeVisionShadow {
     /// Regular shadow style with a subtle offset and radius.
-    public static let regular = ShadowStyle(radius: 1, x: 1, y: 2)
+    public static func regular(using theme: Theme) -> ShadowStyle {
+        ShadowStyle(color: theme.shadowColor, radius: 1, x: 1, y: 2)
+    }
 }
 
 /// A struct representing the shadow properties applied to UI components.
@@ -28,10 +30,7 @@ public enum TradeVisionShadow {
 /// - `y`: The vertical offset of the shadow. Positive values move the shadow downward, and negative values move it upward.
 ///
 /// The shadow color is dynamically set based on the user's theme and color scheme, ensuring consistency with the overall design.
-public struct ShadowStyle {
-    @Environment(\.colorScheme) private var systemScheme
-    @Environment(\.tradeVisionColorScheme) private var userPreference
-    
+public struct ShadowStyle: Sendable {
     /// The color of the shadow, determined by the current theme and color scheme.
     public let color: Color
     /// The blur radius of the shadow.
@@ -45,13 +44,12 @@ public struct ShadowStyle {
     /// The shadow color is set based on the current theme and user color preference.
     ///
     /// - Parameters:
+    ///   - color: The color of the shadow.
     ///   - radius: The blur radius of the shadow.
     ///   - x: The horizontal offset of the shadow.
     ///   - y: The vertical offset of the shadow.
-    public init(radius: CGFloat, x: CGFloat, y: CGFloat) {
-        let theme = TradeVisionTheme.current(for: systemScheme, preference: userPreference)
-        
-        self.color = theme.shadowColor.opacity(0.1)
+    public init(color: Color, radius: CGFloat, x: CGFloat, y: CGFloat) {
+        self.color = color
         self.radius = radius
         self.x = x
         self.y = y

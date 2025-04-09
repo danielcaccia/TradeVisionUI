@@ -5,6 +5,8 @@
 //  Created by Daniel Caccia on 09/04/25.
 //
 
+import Foundation
+
 /// An enum representing various spacing values used in the TradeVision UI.
 /// These values are intended to provide consistent padding and margin spacing across the application.
 ///

@@ -10,6 +10,7 @@ import SwiftUI
 public struct LightTheme: Theme {
     public let primaryText = Color(hex: "0F1E36")
     public let secondaryText = Color(hex: "5B6C85")
+    public let buttonText = Color(hex: "F7F9FB")
     public let primaryBackground = Color(hex: "F7F9FB")
     public let secondaryBackground = Color(hex: "E0E6ED")
     public let cardBackground = Color(hex: "FFFFFF")
@@ -19,4 +20,6 @@ public struct LightTheme: Theme {
     public let secondaryBlue = Color(hex: "00C6FF")
     public let accent = Color(hex: "18C37D")
     public let shadowColor = Color(hex: "0A0A0A")
+    public let positive = Color(hex: "22C55E")
+    public let negative = Color(hex: "EF4444")
 }
