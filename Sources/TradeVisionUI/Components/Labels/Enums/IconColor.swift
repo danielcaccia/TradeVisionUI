@@ -12,8 +12,8 @@ public enum IconColor {
     case primaryBlue
     case secondaryBlue
     case accent
-    case positive
-    case negative
+    case success
+    case error
     
     func color(for theme: Theme) -> Color {
         switch self {
@@ -25,10 +25,10 @@ public enum IconColor {
             theme.secondaryBlue
         case .accent:
             theme.accent
-        case .positive:
-            theme.positive
-        case .negative:
-            theme.negative
+        case .success:
+            theme.success
+        case .error:
+            theme.error
         }
     }
 }

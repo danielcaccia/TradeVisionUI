@@ -17,7 +17,6 @@ public struct TradeVisionBackgroundModifier: ViewModifier {
         let theme = TradeVisionTheme.current(for: systemScheme, preference: userPreference)
 
         return content
-            .background(modifier.color(for: theme))
-            .ignoresSafeArea()
+            .background(modifier.color(for: theme).ignoresSafeArea())
     }
 }

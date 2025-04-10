@@ -24,7 +24,7 @@ public enum TradeVisionShadow {
 ///
 /// The shadow color is automatically determined based on the current system theme and user color preferences.
 ///
-/// - `color`: The color of the shadow, determined by the current theme and system color scheme, with an opacity of 0.1.
+/// - `color`: The color of the shadow, determined by the current theme and system color scheme.
 /// - `radius`: The blur radius of the shadow, which controls its softness. A higher radius results in a more diffused shadow.
 /// - `x`: The horizontal offset of the shadow. Positive values move the shadow to the right, and negative values move it to the left.
 /// - `y`: The vertical offset of the shadow. Positive values move the shadow downward, and negative values move it upward.

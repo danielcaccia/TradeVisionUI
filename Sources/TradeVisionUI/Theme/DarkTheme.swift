@@ -8,18 +8,18 @@
 import SwiftUI
 
 public struct DarkTheme: Theme {
-    public let primaryText = Color(hex: "FFFFFF")
-    public let secondaryText = Color(hex: "A0AEC0")
-    public let buttonText = Color(hex: "F7F9FB")
-    public let primaryBackground = Color(hex: "0B111A")
-    public let secondaryBackground = Color(hex: "2D3748")
-    public let cardBackground = Color(hex: "1C2633")
-    public let divider = Color(hex: "2D3748")
-    public let iconItem = Color(hex: "FFFFFF")
+    public let primaryText = Color.white
+    public let secondaryText = Color(hex: "A1A1AA")
+    public let buttonText = Color.white
+    public let primaryBackground = Color(hex: "0C0C0E")
+    public let secondaryBackground = Color(hex: "1C1C1E")
+    public let cardBackground = Color(hex: "1F1F23")
+    public let divider = Color(hex: "2C2C2E")
+    public let iconItem = Color.white
     public let primaryBlue = Color(hex: "0A84FF")
-    public let secondaryBlue = Color(hex: "1C3F61")
-    public let accent = Color(hex: "30D98D")
-    public let shadowColor = Color(hex: "F5F5F5")
-    public let positive = Color(hex: "4ADE80")
-    public let negative = Color(hex: "F87171")
+    public let secondaryBlue = Color(hex: "5AC8FA")
+    public let accent = Color(hex: "32D74B")
+    public let success = Color(hex: "32D74B")
+    public let error = Color(hex: "FF453A")
+    public let shadowColor = Color.black.opacity(0.4)
 }

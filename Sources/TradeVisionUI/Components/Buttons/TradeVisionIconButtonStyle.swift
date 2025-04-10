@@ -17,10 +17,10 @@ public struct TradeVisionIconButtonStyle: ButtonStyle {
         let theme = TradeVisionTheme.current(for: systemScheme, preference: userPreference)
         
         configuration.label
-            .frame(width: 30, height: 30)
+            .frame(width: ImageType.buttonIcon.size.width, height: ImageType.buttonIcon.size.height)
             .foregroundColor(theme.iconItem)
-            .background(theme.accent.opacity(configuration.isPressed ? 0.2 : 0.1))
-            .clipShape(Circle())
+            .background(theme.iconItem.opacity(configuration.isPressed ? 0.2 : 0.1))
+            .clipShape(RoundedRectangle(cornerRadius: TradeVisionCornerRadius.standard))
             .scaleEffect(configuration.isPressed ? 0.96 : 1)
             .animation(.easeOut(duration: 0.2), value: configuration.isPressed)
     }

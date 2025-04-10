@@ -19,4 +19,12 @@ public extension View {
     func tradeVisionBackground(_ modifier: BackgroundModifierType) -> some View {
         self.modifier(TradeVisionBackgroundModifier(modifier: modifier))
     }
+    
+    func tradeNavigationBar(title: String) -> some View {
+        self.modifier(TradeVisionNavigationBarModifier(title: title))
+    }
+    
+    func withSettingsButton(action: @escaping () -> Void) -> some View {
+        self.modifier(TradeVisionSettingsButtonModifier(action: action))
+    }
 }

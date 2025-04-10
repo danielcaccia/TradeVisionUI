@@ -25,7 +25,3 @@ public struct TradeVisionCardModifier: ViewModifier {
                     y: shadow.y)
     }
 }
-
-public extension View {
-
-}

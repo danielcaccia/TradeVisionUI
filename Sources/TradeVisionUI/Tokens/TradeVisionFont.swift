@@ -16,7 +16,7 @@ import SwiftUI
 /// - `subtitle`: A regular font style for subtitles or smaller heading-like text. Set to 16 points with a regular weight.
 public enum TradeVisionFont {
     /// Font style for large headings or titles (28 points, medium weight).
-    public static let header = Font.system(size: 28, weight: .medium)
+    public static let header = Font.system(size: 30, weight: .medium)
     /// Font style for section titles (17 points, semibold weight).
     public static let sectionHeader = Font.system(size: 17, weight: .semibold)
     /// Font style for general titles or main content text (17 points, regular weight).

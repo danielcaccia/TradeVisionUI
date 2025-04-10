@@ -8,18 +8,18 @@
 import SwiftUI
 
 public struct LightTheme: Theme {
-    public let primaryText = Color(hex: "0F1E36")
-    public let secondaryText = Color(hex: "5B6C85")
-    public let buttonText = Color(hex: "F7F9FB")
-    public let primaryBackground = Color(hex: "F7F9FB")
-    public let secondaryBackground = Color(hex: "E0E6ED")
-    public let cardBackground = Color(hex: "FFFFFF")
-    public let divider = Color(hex: "E0E6ED")
-    public let iconItem = Color(hex: "0F1E36")
-    public let primaryBlue = Color(hex: "009CFF")
-    public let secondaryBlue = Color(hex: "00C6FF")
-    public let accent = Color(hex: "18C37D")
-    public let shadowColor = Color(hex: "0A0A0A")
-    public let positive = Color(hex: "22C55E")
-    public let negative = Color(hex: "EF4444")
+    public let primaryText = Color(hex: "1C1C1E")
+    public let secondaryText = Color(hex: "6E6E73")
+    public let buttonText = Color.white
+    public let primaryBackground = Color(hex: "F5F7FA")
+    public let secondaryBackground = Color(hex: "E5EAF1")
+    public let cardBackground = Color.white
+    public let divider = Color(hex: "D1D6DE")
+    public let iconItem = Color(hex: "1C1C1E")
+    public let primaryBlue = Color(hex: "007AFF")
+    public let secondaryBlue = Color(hex: "34AADC")
+    public let accent = Color(hex: "30D158")
+    public let success = Color(hex: "30D158")
+    public let error = Color(hex: "FF453A")
+    public let shadowColor = Color.black.opacity(0.1)
 }

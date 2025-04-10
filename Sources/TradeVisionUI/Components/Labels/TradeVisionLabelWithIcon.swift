@@ -13,14 +13,20 @@ public struct TradeVisionLabelWithIcon: View {
     
     let text: String
     let type: TradeVisionLabelType
-    let image: Image
+    let iconImage: Image
     let position: ImagePosition
-    let iconColor: IconColor
+    let iconColor: IconColor?
     
-    public init(_ text: String, type: TradeVisionLabelType, image: Image, position: ImagePosition = .left, iconColor: IconColor) {
+    public init(
+        _ text: String,
+        type: TradeVisionLabelType,
+        iconImage: Image,
+        position: ImagePosition = .left,
+        iconColor: IconColor? = nil
+    ) {
         self.text = text
         self.type = type
-        self.image = image
+        self.iconImage = iconImage
         self.position = position
         self.iconColor = iconColor
     }
@@ -31,53 +37,23 @@ public struct TradeVisionLabelWithIcon: View {
         switch position {
         case .top:
             TradeVisionVStack(alignment: .center, spacing: TradeVisionSpacing.xs) {
-                image
-                    .foregroundColor(iconColor.color(for: theme))
-                
-                Text(text)
-                    .font(type.font)
-                    .foregroundColor(type.labelColor(for: theme))
-                    .padding()
-                    .cornerRadius(TradeVisionCornerRadius.standard)
+                iconImage.foregroundColor(iconColor?.color(for: theme) ?? theme.iconItem)
+                TradeVisionLabel(text, type: type, alignment: .center)
             }
         case .left:
             TradeVisionHStack(alignment: .center, spacing: TradeVisionSpacing.xs) {
-                image
-                    .foregroundColor(iconColor.color(for: theme))
-                
-                Text(text)
-                    .multilineTextAlignment(.leading)
-                    .font(type.font)
-                    .foregroundColor(type.labelColor(for: theme))
-                    .padding()
-                    .cornerRadius(TradeVisionCornerRadius.standard)
-                
-                Spacer()
+                iconImage.foregroundColor(iconColor?.color(for: theme) ?? theme.iconItem)
+                TradeVisionLabel(text, type: type)
             }
         case .bottom:
             TradeVisionVStack(alignment: .center, spacing: TradeVisionSpacing.xs) {
-                Text(text)
-                    .font(type.font)
-                    .foregroundColor(type.labelColor(for: theme))
-                    .padding()
-                    .cornerRadius(TradeVisionCornerRadius.standard)
-                
-                image
-                    .foregroundColor(iconColor.color(for: theme))
+                TradeVisionLabel(text, type: type, alignment: .center)
+                iconImage.foregroundColor(iconColor?.color(for: theme) ?? theme.iconItem)
             }
         case .right:
             TradeVisionHStack(alignment: .center, spacing: TradeVisionSpacing.xs) {
-                Spacer()
-                
-                Text(text)
-                    .multilineTextAlignment(.trailing)
-                    .font(type.font)
-                    .foregroundColor(type.labelColor(for: theme))
-                    .padding()
-                    .cornerRadius(TradeVisionCornerRadius.standard)
-                
-                image
-                    .foregroundColor(iconColor.color(for: theme))
+                TradeVisionLabel(text, type: type, alignment: .trailing)
+                iconImage.foregroundColor(iconColor?.color(for: theme) ?? theme.iconItem)
             }
         }
     }

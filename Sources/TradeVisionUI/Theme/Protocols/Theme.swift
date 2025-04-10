@@ -19,7 +19,7 @@ public protocol Theme: Sendable {
     var primaryBlue: Color { get }
     var secondaryBlue: Color { get }
     var accent: Color { get }
+    var success: Color { get }
+    var error: Color { get }
     var shadowColor: Color { get }
-    var positive: Color { get }
-    var negative: Color { get }
 }

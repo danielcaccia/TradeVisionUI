@@ -12,8 +12,8 @@ public enum TradeVisionLabelType {
     case sectionHeader
     case title
     case subtitle
-    case positive
-    case negative
+    case success
+    case error
     
     var font: Font {
         switch self {
@@ -21,7 +21,7 @@ public enum TradeVisionLabelType {
             TradeVisionFont.header
         case .sectionHeader:
             TradeVisionFont.sectionHeader
-        case .title, .positive, .negative:
+        case .title, .success, .error:
             TradeVisionFont.title
         case .subtitle:
             TradeVisionFont.subtitle
@@ -34,10 +34,10 @@ public enum TradeVisionLabelType {
             theme.primaryText
         case .subtitle:
             theme.secondaryText
-        case .positive:
-            theme.positive
-        case .negative:
-            theme.negative
+        case .success:
+            theme.success
+        case .error:
+            theme.error
         }
     }
 }
