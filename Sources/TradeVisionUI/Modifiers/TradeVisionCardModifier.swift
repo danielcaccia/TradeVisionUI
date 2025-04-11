@@ -16,7 +16,7 @@ public struct TradeVisionCardModifier: ViewModifier {
         let shadow = TradeVisionShadow.regular(using: theme)
         
         content
-            .padding(TradeVisionSpacing.md)
+            .padding(TradeVisionSpacing.lg)
             .background(theme.cardBackground)
             .cornerRadius(TradeVisionCornerRadius.standard)
             .shadow(color: shadow.color,

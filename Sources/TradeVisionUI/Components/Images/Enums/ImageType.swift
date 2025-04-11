@@ -14,7 +14,7 @@ public enum ImageType {
     var size: CGSize {
         switch self {
         case .headerIcon:
-            CGSize(width: 64, height: 64)
+            CGSize(width: 48, height: 48)
         case .buttonIcon:
             CGSize(width: 34, height: 34)
         }

@@ -14,7 +14,7 @@ public struct TradeVisionHStack<Content: View>: View {
 
     public init(
         alignment: VerticalAlignment = .center,
-        spacing: CGFloat = TradeVisionSpacing.lg,
+        spacing: CGFloat = TradeVisionSpacing.md,
         @ViewBuilder content: @escaping () -> Content
     ) {
         self.alignment = alignment

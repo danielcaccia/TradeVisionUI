@@ -24,7 +24,7 @@ public struct TradeVisionCard<Content: View>: View {
         TradeVisionVStack(alignment: .leading) {
             content()
         }
-        .padding()
+        .padding(TradeVisionSpacing.sm)
         .background(theme.cardBackground)
         .cornerRadius(TradeVisionCornerRadius.standard)
         .shadow(color: shadow.color, radius: shadow.radius, x: shadow.x, y: shadow.y)

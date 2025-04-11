@@ -28,6 +28,6 @@ public struct TradeVisionLabel: View {
             .multilineTextAlignment(alignment)
             .font(type.font)
             .foregroundColor(type.labelColor(for: theme))
-            .padding()
+            .frame(maxWidth: .infinity, alignment: alignment.toAlignment())
     }
 }
