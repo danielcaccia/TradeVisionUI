@@ -7,22 +7,21 @@
 
 import SwiftUI
 
-public struct TradeVisionSettingsButtonModifier: ViewModifier {
+struct TradeVisionSettingsButtonModifier: ViewModifier {
     let action: () -> Void
     
     public init(action: @escaping () -> Void) {
         self.action = action
     }
     
-    public func body(content: Content) -> some View {
+    func body(content: Content) -> some View {
         content
             .toolbar {
                 #if os(iOS)
                 ToolbarItem(placement: .topBarTrailing) {
-                    Button(action: action) {
-                        Image(systemName: "gear")
+                    TradeVisionButton(type: .icon(Image(systemName: "gear"))) {
+                        action()
                     }
-                    .buttonStyle(TradeVisionIconButtonStyle())
                 }
                 #endif
             }

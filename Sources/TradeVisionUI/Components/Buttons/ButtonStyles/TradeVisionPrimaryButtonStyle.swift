@@ -7,13 +7,13 @@
 
 import SwiftUI
 
-public struct TradeVisionPrimaryButtonStyle: ButtonStyle {
+struct TradeVisionPrimaryButtonStyle: ButtonStyle {
     @Environment(\.colorScheme) private var systemScheme
     @Environment(\.tradeVisionColorScheme) private var userPreference
     
-    public init() {}
+    init() {}
     
-    public func makeBody(configuration: Configuration) -> some View {
+    func makeBody(configuration: Configuration) -> some View {
         let theme = TradeVisionTheme.current(for: systemScheme, preference: userPreference)
         
         configuration.label

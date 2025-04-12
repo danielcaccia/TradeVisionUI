@@ -7,11 +7,11 @@
 
 import SwiftUI
 
-public struct TradeVisionCardModifier: ViewModifier {
+struct TradeVisionCardModifier: ViewModifier {
     @Environment(\.colorScheme) private var systemScheme
     @Environment(\.tradeVisionColorScheme) private var userPreference
     
-    public func body(content: Content) -> some View {
+    func body(content: Content) -> some View {
         let theme = TradeVisionTheme.current(for: systemScheme, preference: userPreference)
         let shadow = TradeVisionShadow.regular(using: theme)
         
