@@ -41,7 +41,7 @@ public struct TradeVisionLabelWithIcon: View {
                 TradeVisionLabel(text, type: type, alignment: .center)
             }
         case .left:
-            TradeVisionHStack(alignment: .center, spacing: TradeVisionSpacing.xs) {
+            TradeVisionHStack(alignment: .center, spacing: TradeVisionSpacing.sm) {
                 iconImage.foregroundColor(iconColor?.color(for: theme) ?? theme.iconItem)
                 TradeVisionLabel(text, type: type)
             }
@@ -51,7 +51,7 @@ public struct TradeVisionLabelWithIcon: View {
                 iconImage.foregroundColor(iconColor?.color(for: theme) ?? theme.iconItem)
             }
         case .right:
-            TradeVisionHStack(alignment: .center, spacing: TradeVisionSpacing.xs) {
+            TradeVisionHStack(alignment: .center, spacing: TradeVisionSpacing.sm) {
                 TradeVisionLabel(text, type: type, alignment: .trailing)
                 iconImage.foregroundColor(iconColor?.color(for: theme) ?? theme.iconItem)
             }
