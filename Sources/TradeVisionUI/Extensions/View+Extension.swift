@@ -27,4 +27,8 @@ public extension View {
     func withSettingsButton(action: @escaping () -> Void) -> some View {
         self.modifier(TradeVisionSettingsButtonModifier(action: action))
     }
+    
+    func shimmering(isActive: Bool) -> some View {
+        self.modifier(TradeVisionShimmeringModifier(isActive: isActive))
+    }
 }
