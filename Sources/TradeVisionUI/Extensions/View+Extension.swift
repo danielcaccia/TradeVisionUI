@@ -14,8 +14,8 @@ public extension View {
         self.modifier(TradeVisionThemeEnvironment(colorScheme: scheme))
     }
     
-    func tradeVisionCard() -> some View {
-        self.modifier(TradeVisionCardModifier())
+    func tradeVisionCard(padding: CGFloat = TradeVisionSpacing.lg) -> some View {
+        self.modifier(TradeVisionCardModifier(padding))
     }
     
     func tradeVisionBackground(_ modifier: BackgroundModifierType) -> some View {
