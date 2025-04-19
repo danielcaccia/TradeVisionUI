@@ -39,12 +39,13 @@ public struct TradeVisionSwipeableRow<Content: View>: View {
                     .frame(maxWidth: .infinity)
                 Button(role: .destructive, action: onDelete) {
                     Image(systemName: "trash")
+                        .frame(width: 28, height: 28)
                         .foregroundColor(.white)
                         .background(theme.error)
                 }
-                .padding(.trailing)
+                .padding(.trailing, TradeVisionSpacing.xl)
             }
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .frame(maxHeight: .infinity)
             .background(theme.error)
             
             content()
@@ -63,7 +64,7 @@ public struct TradeVisionSwipeableRow<Content: View>: View {
                             }
                         }
                         .onEnded { value in
-                            if value.translation.width < -200 {
+                            if value.translation.width < -220 {
                                 withAnimation {
                                     offset = -300
                                     deleted = true
@@ -71,8 +72,8 @@ public struct TradeVisionSwipeableRow<Content: View>: View {
                                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
                                     onDelete()
                                 }
-                            } else if value.translation.width < -80 {
-                                offset = -80
+                            } else if value.translation.width < -72 {
+                                offset = -72
                             } else {
                                 offset = 0
                             }
