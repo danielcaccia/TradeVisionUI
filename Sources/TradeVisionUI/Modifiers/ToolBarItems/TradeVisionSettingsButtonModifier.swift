@@ -19,7 +19,7 @@ struct TradeVisionSettingsButtonModifier: ViewModifier {
             .toolbar {
                 #if os(iOS)
                 ToolbarItem(placement: .topBarTrailing) {
-                    TradeVisionButton(type: .icon(Image(systemName: "gear"))) {
+                    TradeVisionButton(type: .icon(Image(systemName: "gearshape"))) {
                         action()
                     }
                 }

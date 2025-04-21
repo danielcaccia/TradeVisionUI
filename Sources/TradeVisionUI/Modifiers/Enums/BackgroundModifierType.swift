@@ -11,8 +11,7 @@ public enum BackgroundModifierType {
     case primaryBackground
     case secondaryBackground
     case cardBackground
-    case primaryBlue
-    case secondaryBlue
+    case accent
     
     func color(for theme: Theme) -> Color {
         switch self {
@@ -22,10 +21,8 @@ public enum BackgroundModifierType {
             theme.secondaryBackground
         case .cardBackground:
             theme.cardBackground
-        case .primaryBlue:
-            theme.primaryBlue
-        case .secondaryBlue:
-            theme.secondaryBlue
+        case .accent:
+            theme.accent
         }
     }
 }

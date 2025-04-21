@@ -18,8 +18,8 @@ struct TradeVisionIconButtonStyle: ButtonStyle {
         
         configuration.label
             .frame(width: ImageType.buttonIcon.size.width, height: ImageType.buttonIcon.size.height)
-            .foregroundColor(theme.iconItem)
-            .background(theme.iconItem.opacity(configuration.isPressed ? 0.2 : 0.1))
+            .foregroundColor(theme.icon)
+            .background(Color.clear)
             .clipShape(RoundedRectangle(cornerRadius: TradeVisionCornerRadius.standard))
             .scaleEffect(configuration.isPressed ? 0.96 : 1)
             .animation(.easeOut(duration: 0.2), value: configuration.isPressed)

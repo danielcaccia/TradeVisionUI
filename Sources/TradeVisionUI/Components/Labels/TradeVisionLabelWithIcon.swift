@@ -15,20 +15,17 @@ public struct TradeVisionLabelWithIcon: View {
     let type: TradeVisionLabelType
     let iconImage: Image
     let position: ImagePosition
-    let iconColor: IconColor?
     
     public init(
         _ text: String,
         type: TradeVisionLabelType,
         iconImage: Image,
         position: ImagePosition = .left,
-        iconColor: IconColor? = nil
     ) {
         self.text = text
         self.type = type
         self.iconImage = iconImage
         self.position = position
-        self.iconColor = iconColor
     }
     
     public var body: some View {
@@ -37,23 +34,23 @@ public struct TradeVisionLabelWithIcon: View {
         switch position {
         case .top:
             TradeVisionVStack(alignment: .center, spacing: TradeVisionSpacing.xs) {
-                iconImage.foregroundColor(iconColor?.color(for: theme) ?? theme.iconItem)
+                iconImage.foregroundColor(theme.icon)
                 TradeVisionLabel(text, type: type, alignment: .center)
             }
         case .left:
             TradeVisionHStack(alignment: .center, spacing: TradeVisionSpacing.sm) {
-                iconImage.foregroundColor(iconColor?.color(for: theme) ?? theme.iconItem)
+                iconImage.foregroundColor(theme.icon)
                 TradeVisionLabel(text, type: type)
             }
         case .bottom:
             TradeVisionVStack(alignment: .center, spacing: TradeVisionSpacing.xs) {
                 TradeVisionLabel(text, type: type, alignment: .center)
-                iconImage.foregroundColor(iconColor?.color(for: theme) ?? theme.iconItem)
+                iconImage.foregroundColor(theme.icon)
             }
         case .right:
             TradeVisionHStack(alignment: .center, spacing: TradeVisionSpacing.sm) {
                 TradeVisionLabel(text, type: type, alignment: .trailing)
-                iconImage.foregroundColor(iconColor?.color(for: theme) ?? theme.iconItem)
+                iconImage.foregroundColor(theme.icon)
             }
         }
     }

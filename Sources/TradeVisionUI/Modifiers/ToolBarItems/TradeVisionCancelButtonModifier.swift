@@ -8,9 +8,13 @@
 import SwiftUI
 
 struct TradeVisionCancelButtonModifier: ViewModifier {
+    @Environment(\.colorScheme) private var systemScheme
+    @Environment(\.tradeVisionColorScheme) private var userPreference
     @Environment(\.dismiss) var dismiss
     
     func body(content: Content) -> some View {
+        let theme = TradeVisionTheme.current(for: systemScheme, preference: userPreference)
+        
         content
             .toolbar {
                 #if os(iOS)
@@ -18,6 +22,7 @@ struct TradeVisionCancelButtonModifier: ViewModifier {
                     Button("Cancel") {
                         dismiss()
                     }
+                    .foregroundColor(theme.accent)
                 }
                 #endif
             }

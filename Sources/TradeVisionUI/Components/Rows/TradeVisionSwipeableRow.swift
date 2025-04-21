@@ -40,7 +40,7 @@ public struct TradeVisionSwipeableRow<Content: View>: View {
                 Button(role: .destructive, action: onDelete) {
                     Image(systemName: "trash")
                         .frame(width: 28, height: 28)
-                        .foregroundColor(.white)
+                        .foregroundColor(theme.buttonText)
                         .background(theme.error)
                 }
                 .padding(.trailing, TradeVisionSpacing.xl)
