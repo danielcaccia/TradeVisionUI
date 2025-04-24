@@ -11,6 +11,7 @@ public enum TradeVisionColorScheme: String, Identifiable, CaseIterable, Codable,
     case system
     case light
     case dark
+    case solarFlare
     
     public var id: String { self.rawValue }
     
@@ -19,6 +20,7 @@ public enum TradeVisionColorScheme: String, Identifiable, CaseIterable, Codable,
         case .system: return "Sistema"
         case .light: return "Light Mode"
         case .dark: return "Dark Mode"
+        case .solarFlare: return "Solar Flare"
         }
     }
     
@@ -27,6 +29,7 @@ public enum TradeVisionColorScheme: String, Identifiable, CaseIterable, Codable,
         case .system: return nil
         case .light: return .light
         case .dark: return .dark
+        case .solarFlare: return nil
         }
     }
 }

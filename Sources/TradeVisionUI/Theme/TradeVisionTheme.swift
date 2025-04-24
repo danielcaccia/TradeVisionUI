@@ -16,6 +16,8 @@ public struct TradeVisionTheme {
             return DarkTheme()
         case .light:
             return LightTheme()
+        case .solarFlare:
+            return SolarFlareTheme()
         }
     }
 }

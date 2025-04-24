@@ -8,9 +8,6 @@
 import SwiftUI
 
 public struct TradeVisionPicker<Style: PickerStyle, SelectionValue: Hashable, Content: View>: View {
-    @Environment(\.colorScheme) private var systemScheme
-    @Environment(\.tradeVisionColorScheme) private var userPreference
-    
     private let titleKey: LocalizedStringKey
     private let style: Style
     private let selection: Binding<SelectionValue>
@@ -29,8 +26,6 @@ public struct TradeVisionPicker<Style: PickerStyle, SelectionValue: Hashable, Co
     }
 
     public var body: some View {
-        let theme = TradeVisionTheme.current(for: systemScheme, preference: userPreference)
-        
         Picker(titleKey, selection: selection) {
             content()
         }
