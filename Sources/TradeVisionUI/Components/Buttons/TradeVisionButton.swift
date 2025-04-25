@@ -19,13 +19,19 @@ public struct TradeVisionButton: View {
     public var body: some View {
         switch type {
         case .primary(let text):
-            Button(text) {
-                action()
+            Button(action: action) {
+                TradeVisionLabel(text, type: .title, alignment: .center)
+                    .fixedSize()
+                    .padding(.vertical, TradeVisionSpacing.sm)
+                    .padding(.horizontal, TradeVisionSpacing.lg)
             }
             .buttonStyle(TradeVisionPrimaryButtonStyle())
         case .secondary(let text):
-            Button(text) {
-                action()
+            Button(action: action) {
+                TradeVisionLabel(text, type: .title, alignment: .center)
+                    .fixedSize()
+                    .padding(.vertical, TradeVisionSpacing.xs)
+                    .padding(.horizontal, TradeVisionSpacing.md)
             }
             .buttonStyle(TradeVisionSecondaryButtonStyle())
         case .icon(let image):

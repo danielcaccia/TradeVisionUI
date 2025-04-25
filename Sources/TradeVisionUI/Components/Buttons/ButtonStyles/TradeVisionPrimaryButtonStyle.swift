@@ -20,8 +20,6 @@ struct TradeVisionPrimaryButtonStyle: ButtonStyle {
             .font(TradeVisionFont.button)
             .foregroundColor(theme.buttonText)
             .background(theme.accent)
-            .padding(.vertical, TradeVisionSpacing.sm)
-            .padding(.horizontal, TradeVisionSpacing.lg)
             .cornerRadius(TradeVisionCornerRadius.small)
             .scaleEffect(configuration.isPressed ? 0.96 : 1)
             .animation(.easeOut(duration: 0.2), value: configuration.isPressed)

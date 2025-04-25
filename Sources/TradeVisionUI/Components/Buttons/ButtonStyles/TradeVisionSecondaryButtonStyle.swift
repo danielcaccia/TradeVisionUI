@@ -18,8 +18,6 @@ struct TradeVisionSecondaryButtonStyle: ButtonStyle {
         
         configuration.label
             .font(TradeVisionFont.subtitle)
-            .padding(.vertical, TradeVisionSpacing.xs)
-            .padding(.horizontal, TradeVisionSpacing.md)
             .foregroundColor(theme.primaryText)
             .background(theme.secondaryBackground.opacity(configuration.isPressed ? 1 : 0.9))
             .clipShape(RoundedRectangle(cornerRadius: TradeVisionCornerRadius.standard))
