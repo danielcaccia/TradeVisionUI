@@ -34,23 +34,39 @@ public struct TradeVisionLabelWithIcon: View {
         switch position {
         case .top:
             TradeVisionVStack(alignment: .center, spacing: TradeVisionSpacing.xs) {
-                iconImage.foregroundColor(theme.icon)
+                iconImage
+                    .resizable()
+                    .renderingMode(.template)
+                    .foregroundColor(theme.icon)
+                    .frame(width: ImageType.smallIcon.size.width, height: ImageType.smallIcon.size.height)
                 TradeVisionLabel(text, type: type, alignment: .center)
             }
         case .left:
             TradeVisionHStack(alignment: .center, spacing: TradeVisionSpacing.sm) {
-                iconImage.foregroundColor(theme.icon)
+                iconImage
+                    .resizable()
+                    .renderingMode(.template)
+                    .foregroundColor(theme.icon)
+                    .frame(width: ImageType.smallIcon.size.width, height: ImageType.smallIcon.size.height)
                 TradeVisionLabel(text, type: type)
             }
         case .bottom:
             TradeVisionVStack(alignment: .center, spacing: TradeVisionSpacing.xs) {
                 TradeVisionLabel(text, type: type, alignment: .center)
-                iconImage.foregroundColor(theme.icon)
+                iconImage
+                    .resizable()
+                    .renderingMode(.template)
+                    .foregroundColor(theme.icon)
+                    .frame(width: ImageType.smallIcon.size.width, height: ImageType.smallIcon.size.height)
             }
         case .right:
             TradeVisionHStack(alignment: .center, spacing: TradeVisionSpacing.sm) {
                 TradeVisionLabel(text, type: type, alignment: .trailing)
-                iconImage.foregroundColor(theme.icon)
+                iconImage
+                    .resizable()
+                    .renderingMode(.template)
+                    .foregroundColor(theme.icon)
+                    .frame(width: ImageType.smallIcon.size.width, height: ImageType.smallIcon.size.height)
             }
         }
     }

@@ -12,6 +12,8 @@ public struct TradeVisionSwipeableRow<Content: View>: View {
     @Environment(\.tradeVisionColorScheme) private var userPreference
     
     @State private var offset: CGFloat = 0
+    @State private var dragTranslation: CGSize = .zero
+    @State private var isHorizontalDrag: Bool? = nil
     @State private var deleted = false
     
     @GestureState private var isDragging = false
@@ -53,17 +55,25 @@ public struct TradeVisionSwipeableRow<Content: View>: View {
                 .background(theme.cardBackground)
                 .contentShape(Rectangle())
                 .offset(x: offset)
-                .gesture(
-                    DragGesture()
-                        .updating($isDragging) { value, state, _ in
-                            state = true
-                        }
+                .simultaneousGesture(
+                    DragGesture(minimumDistance: 10)
                         .onChanged { value in
-                            if value.translation.width < 0 {
-                                offset = value.translation.width
+                            if isHorizontalDrag == nil {
+                                let horizontal = abs(value.translation.width)
+                                let vertical = abs(value.translation.height)
+                                isHorizontalDrag = horizontal > vertical
                             }
+                            
+                            guard isHorizontalDrag == true else { return }
+                            
+                            offset = min(0, value.translation.width)
                         }
                         .onEnded { value in
+                            guard isHorizontalDrag == true else {
+                                isHorizontalDrag = nil
+                                return
+                            }
+                            
                             if value.translation.width < -220 {
                                 withAnimation {
                                     offset = -300
@@ -73,13 +83,19 @@ public struct TradeVisionSwipeableRow<Content: View>: View {
                                     onDelete()
                                 }
                             } else if value.translation.width < -72 {
-                                offset = -72
+                                withAnimation {
+                                    offset = -72
+                                }
                             } else {
-                                offset = 0
+                                withAnimation {
+                                    offset = 0
+                                }
                             }
+                            
+                            isHorizontalDrag = nil
                         }
                 )
-                .simultaneousGesture(
+                .highPriorityGesture(
                     TapGesture()
                         .onEnded {
                             if abs(offset) < 10 {

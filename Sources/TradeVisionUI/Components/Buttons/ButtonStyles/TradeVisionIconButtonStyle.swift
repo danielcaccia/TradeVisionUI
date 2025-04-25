@@ -17,8 +17,8 @@ struct TradeVisionIconButtonStyle: ButtonStyle {
         let theme = TradeVisionTheme.current(for: systemScheme, preference: userPreference)
         
         configuration.label
-            .frame(width: ImageType.buttonIcon.size.width, height: ImageType.buttonIcon.size.height)
-            .foregroundColor(theme.icon)
+            .frame(width: ImageType.largeIcon.size.width, height: ImageType.largeIcon.size.height)
+            .tint(theme.icon)
             .background(Color.clear)
             .clipShape(RoundedRectangle(cornerRadius: TradeVisionCornerRadius.standard))
             .scaleEffect(configuration.isPressed ? 0.96 : 1)
