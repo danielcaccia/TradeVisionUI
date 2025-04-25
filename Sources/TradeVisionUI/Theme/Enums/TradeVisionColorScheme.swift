@@ -29,7 +29,7 @@ public enum TradeVisionColorScheme: String, Identifiable, CaseIterable, Codable,
         case .system: return nil
         case .light: return .light
         case .dark: return .dark
-        case .solarFlare: return nil
+        case .solarFlare: return .dark
         }
     }
 }
